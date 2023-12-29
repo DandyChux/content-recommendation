@@ -1,0 +1,38 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name='viewport' content="width=device-width, initial-scale=1.0">
+    <meta name='description' content="Content Recommendation System">
+    <meta name='keywords' content="AI, LLM">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>
+        {% block title %}Content Recommendation System {% endblock %}
+    </title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header class='flex items-center py-4 px-8'>
+        <nav>
+            <!-- Navigation links here -->
+            <a href="{% url 'index' %}">Home</a>
+            <a href="{% url 'login' %}">Login</a>
+            <a href="{% url 'signup' %}">Signup</a>
+            <!-- Add more navigation items here -->
+        </nav>
+    </header>
+
+    <main class="container py-4 px-8">
+        {% block content %}
+        <!-- Content will be overridden in child templates -->
+        {% endblock %}
+    </main>
+
+    <footer class='py-4 px-8'>
+        <p>© 2023 Content Recommendation System</p>
+    </footer>
+</body>
+</html>

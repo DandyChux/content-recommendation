@@ -1,0 +1,49 @@
+{% extends 'base_generic.html' %} <!-- Assuming you have a base template -->
+
+{% block title %}Login | Content Recommendation System{% endblock %}
+
+{% block content %}
+<div class="container mx-auto">
+    <div class="max-w-md mx-auto bg-white rounded-lg overflow-hidden md:max-w-lg">
+        <div class="md:flex">
+            <div class="w-full">
+                <div class="p-4 border-b-2"> 
+                    <h2 class="text-2xl ">Login</h2>
+                </div>
+                <div class="p-3">
+                    <form method="post">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        {% comment %} <div class="mb-6">
+                            <label class="block mb-2 text-sm font-bold text-gray-700" for="username">
+                                Username
+                            </label>
+                            <input class="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" 
+                                id="username" 
+                                type="text" 
+                                placeholder="Username"
+                                name="username">
+                        </div>
+                        <div class="mb-6">
+                            <label class="block mb-2 text-sm font-bold text-gray-700" for="password">
+                                Password
+                            </label>
+                            <input class="w-full px-3 py-2 mb-3 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" 
+                                id="password" 
+                                type="password" 
+                                placeholder="******************"
+                                name="password">
+                        </div> {% endcomment %}
+                        <div class="flex items-center justify-between">
+                            <button class="px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700 focus:outline-none focus:shadow-outline" 
+                                    type="submit">
+                                Login
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

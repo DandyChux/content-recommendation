@@ -1,0 +1,29 @@
+{% extends 'base_generic.html' %}
+
+{% block title %}Sign Up | Content Recommendation System{% endblock %}
+
+{% block content %}
+<div class="container mx-auto">
+    <div class="max-w-md mx-auto bg-white rounded-lg overflow-hidden md:max-w-lg">
+        <div class="md:flex">
+            <div class="w-full">
+                <div class="p-4 border-b-2"> 
+                    <h2 class="text-2xl ">Sign Up</h2>
+                </div>
+                <div class="p-3">
+                    <form method="post">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <div class="flex items-center justify-between">
+                            <button class="px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700 focus:outline-none focus:shadow-outline" 
+                                    type="submit">
+                                Sign Up
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
